@@ -51,6 +51,91 @@ An open source (BSD licensed) project:
 
 - 2018.2  golang 1.10
 
+* Hello word
+
+- Environments
+
+  GOROOT
+  GOPATH
+
+- Project
+
+  src
+    |-vendor/
+  bin
+  pkg
+
+- Demo
+
+.play ../demo/string.go /^func ConcatStr/,/^}/
+
+* Go IDE
+
+- VSCode(golang)
+
+  GDB(GNU DEBUGER)
+
+- GoLand
+
+- Sublime(GoSublime)
+
+* Language specification
+
+* Pop especially
+
+- interface type
+
+- struct and embed
+
+- `go` for concurrency
+
+- `channel` for communication
+
+- `defer` for releasing resources
+
+- reflect.Type & reflect.Value
+
+* interface type
+
+Go's interfaces—static, checked at compile time, dynamic when asked for at runtime.
+
+- type xxx interface {}
+
+.code ../demo/string.go /^type Stringer/,/^}/
+
+- interface{}
+
+A type implements any interface comprising any subset of its methods and may therefore implement several distinct interfaces, all types implement the empty interface.
+
+- Type assertions
+
+  t, ok := i.(T)
+  switch
+
+.link https://research.swtch.com/interfaces Go Data Structures: Interfaces
+.link https://tour.golang.org/methods/15 Type assertions
+
+* struct and embed
+
+Composite Pattern
+
+.code ../demo/types.go /^type Addr/,/^}/
+
+* `go` for concurrency
+
+* `channel` for communication
+
+* `defer` for releasing resources
+
+* reflect.Type & reflect.Value
+
+- Type.Elem()
+
+- Value.Elem()
+
+- Addr()
+
+- Interface()
 
 * Go tools
 
@@ -95,6 +180,8 @@ An open source (BSD licensed) project:
 * Subtests and Sub-benchmarks
 
 .code ../demo/string_test.go /^func TestConcatStrs/,/^}/
+
+ go test -run ConcatStrs/A= # For top-level tests matching "ConcatStrs", run subtests matching "A=".
 
 
 

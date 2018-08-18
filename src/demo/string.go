@@ -6,6 +6,32 @@ import (
 	"strings"
 )
 
+type Stringer interface {
+	String() string
+}
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p *Person) String() string {
+	return fmt.Sprintf("Name:%s, Age:%d", p.Name, p.Age)
+}
+
+func ToString(any interface{}) string {
+	if v, ok := any.(Stringer); ok {
+		return v.String()
+	}
+	switch v := any.(type) {
+	case int:
+		return strconv.Itoa(v)
+	case float:
+		return strconv.Ftoa(v, 'g', -1)
+	}
+	return "???"
+}
+
 func ConcatStr(params []string) string {
 	var result string
 	for _, param := range params {
