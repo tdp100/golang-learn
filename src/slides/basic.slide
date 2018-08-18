@@ -1,0 +1,102 @@
+Basic Golang
+19 Aug 2018
+Tags: go golang 
+
+Deping Tang
+Software Enginner, Huawei CloudBU
+tangdeping@huawei.com
+ 
+* About me?
+ 
+.image ./tdp.png _ 100
+
+- Javascript, Java, Go
+- 2015~2016, Console Framework, API GW, SMN
+- 2016~, OBS Console, DES, IMGS
+.link https://github.com/tdp100 github link
+ 
+* What about go
+
+An open source (BSD licensed) project:
+ 
+- Language specification,
+
+- Small runtime (garbage collector, scheduler, etc),
+
+- Two compilers (gc and gccgo),
+
+- 'Batteries included' standard library,
+
+- Tools (build, fetch, test, document, profile, format, doc, vet),
+
+- Documentation.
+
+* Go history
+
+- The original designers and authors of Plan 9
+
+  Ken Thompson, Rob Pike, Dave Presotto, and Phil Winterbottom
+
+- The original designers of the Golang
+
+  Robert Griesemer, Rob Pike, Ken Thompson, Ian Taylor and Russ Cox
+
+- The Go programming languages was released in late 2007 by Google.
+  
+  Go is a compiled, concurrent, garbage-collected, statically typed language developed at Google. 
+  It is an open source project: Google imports the public repository rather than the other
+   way around.
+
+- 2012.3  golang 1.0
+
+- 2018.2  golang 1.10
+
+
+* Go tools
+
+* Go tools
+
+.image ./toolchain.png 550 _
+
+* Go testing
+
+* Go testing
+
+- Test
+
+- Benchmark
+
+- Subtests and Sub-benchmarks
+
+- `httptest`
+
+   Package httptest provides utilities for HTTP testing
+
+*help*
+ 
+ go help test
+ go help testflag
+
+.link https://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go How to write benchmarks in Go
+
+
+* Test
+
+.code ../demo/string_test.go /^func TestConcatStr/,/^}/
+
+ go test -v demo -run ^TestConcatStr1$
+
+* Benchmark Test
+
+.code ../demo/string_test.go /^func BenchmarkConcatStr/,/^}/
+ 
+ go test -v demo -bench ^BenchmarkConcatStr$ -run ^$
+
+* Subtests and Sub-benchmarks
+
+.code ../demo/string_test.go /^func TestConcatStrs/,/^}/
+
+
+
+
+
